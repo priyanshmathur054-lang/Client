@@ -1,16 +1,33 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router'
-import Dashboardscreen from '../screen/Dashboardscreen'
 
-function Applayout() {
-    return (<div>
+
+function Applayout () {
+    const[isAppReady,updateAppStatus]=React.useState(false)
+    setTimeout(() => {
+        updateAppStatus(true)
+
+    }, 1.5 * 1000);
+
+    if(!isAppReady)
+    {
+        return(
+        <div>
+            Page is Loading
+        </div>
+     
+        );
+    }
+
+    return (
+    <div>
         <header>HEADER</header>
         <nav>
             <ul>
                 <li><NavLink to={"/"}> Dashboard </NavLink></li>
                 <li><NavLink to={"/student"}> Student </NavLink></li>
-                <li>Teacher</li>
-                <li>Staff</li>
+                <li><NavLink to={"/teacher"}>Teacher</NavLink></li>
+                <li><NavLink to={"/staff"}>Staff</NavLink></li>
             </ul>
         </nav>
         <main>
