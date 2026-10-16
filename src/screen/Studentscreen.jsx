@@ -1,150 +1,145 @@
-import React from 'react'
+import React from "react";
+import AddStudent from "./AddStudent";
 
-const Studentscreen = () => {
-  const [studnets, setstudents] = React.useState([
+const StudentScreen = () => {
+  const [students, setStudents] = React.useState([
     {
-
-      "id": 1,
-      "name": "Rahul Sharma",
-      "phone": "9000000001",
-      "email": "rahul@example.com",
-      "dob": "2002-05-14",
-      "createdAt": "2026-10-01T10:00:00Z",
-      "updatedAt": "2026-10-10T12:30:00Z"
+      id: 1,
+      name: "Aarav Sharma",
+      phone: "+91-9000000001",
+      email: "aarav.sharma@example.com",
+      dob: "2004-05-12",
+      createdAt: "2026-10-01T09:00:00Z",
+      updatedAt: "2026-10-01T09:00:00Z",
     },
     {
-      "id": 2,
-      "name": "Priya Verma",
-      "phone": "9000000002",
-      "email": "priya@example.com",
-      "dob": "2003-08-21",
-      "createdAt": "2026-10-02T11:00:00Z",
-      "updatedAt": "2026-10-11T13:00:00Z"
+      id: 2,
+      name: "Priya Patel",
+      phone: "+91-9000000002",
+      email: "priya.patel@example.com",
+      dob: "2003-11-23",
+      createdAt: "2026-10-02T10:15:00Z",
+      updatedAt: "2026-10-05T12:30:00Z",
     },
     {
-      "id": 3,
-      "name": "Amit Singh",
-      "phone": "9000000003",
-      "email": "amit@example.com",
-      "dob": "2001-12-09",
-      "createdAt": "2026-10-03T09:30:00Z",
-      "updatedAt": "2026-10-12T14:00:00Z"
+      id: 3,
+      name: "Rahul Verma",
+      phone: "+91-9000000003",
+      email: "rahul.verma@example.com",
+      dob: "2005-02-08",
+      createdAt: "2026-10-03T08:45:00Z",
+      updatedAt: "2026-10-03T08:45:00Z",
     },
     {
-      "id": 4,
-      "name": "Neha Patel",
-      "phone": "9000000004",
-      "email": "neha@example.com",
-      "dob": "2002-03-17",
-      "createdAt": "2026-10-04T08:00:00Z",
-      "updatedAt": "2026-10-13T15:30:00Z"
+      id: 4,
+      name: "Sneha Gupta",
+      phone: "+91-9000000004",
+      email: "sneha.gupta@example.com",
+      dob: "2004-07-19",
+      createdAt: "2026-10-04T11:20:00Z",
+      updatedAt: "2026-10-06T14:10:00Z",
     },
     {
-      "id": 5,
-      "name": "Arjun Mehta",
-      "phone": "9000000005",
-      "email": "arjun@example.com",
-      "dob": "2003-11-25",
-      "createdAt": "2026-10-05T10:15:00Z",
-      "updatedAt": "2026-10-14T11:45:00Z"
+      id: 5,
+      name: "Arjun Singh",
+      phone: "+91-9000000005",
+      email: "arjun.singh@example.com",
+      dob: "2003-09-14",
+      createdAt: "2026-10-05T07:30:00Z",
+      updatedAt: "2026-10-05T07:30:00Z",
     },
     {
-      "id": 6,
-      "name": "Pooja Gupta",
-      "phone": "9000000006",
-      "email": "pooja@example.com",
-      "dob": "2002-07-06",
-      "createdAt": "2026-10-06T12:00:00Z",
-      "updatedAt": "2026-10-12T16:00:00Z"
+      id: 6,
+      name: "Ananya Joshi",
+      phone: "+91-9000000006",
+      email: "ananya.joshi@example.com",
+      dob: "2005-01-30",
+      createdAt: "2026-10-06T13:00:00Z",
+      updatedAt: "2026-10-08T09:45:00Z",
     },
     {
-      "id": 7,
-      "name": "Karan Joshi",
-      "phone": "9000000007",
-      "email": "karan@example.com",
-      "dob": "2001-09-30",
-      "createdAt": "2026-10-07T09:00:00Z",
-      "updatedAt": "2026-10-13T10:30:00Z"
+      id: 7,
+      name: "Rohan Mehta",
+      phone: "+91-9000000007",
+      email: "rohan.mehta@example.com",
+      dob: "2004-12-05",
+      createdAt: "2026-10-07T10:10:00Z",
+      updatedAt: "2026-10-07T10:10:00Z",
     },
     {
-      "id": 8,
-      "name": "Anjali Yadav",
-      "phone": "9000000008",
-      "email": "anjali@example.com",
-      "dob": "2003-01-12",
-      "createdAt": "2026-10-08T11:30:00Z",
-      "updatedAt": "2026-10-14T12:00:00Z"
+      id: 8,
+      name: "Kavya Reddy",
+      phone: "+91-9000000008",
+      email: "kavya.reddy@example.com",
+      dob: "2003-06-17",
+      createdAt: "2026-10-08T08:00:00Z",
+      updatedAt: "2026-10-10T16:20:00Z",
     },
     {
-      "id": 9,
-      "name": "Rohit Kumar",
-      "phone": "9000000009",
-      "email": "rohit@example.com",
-      "dob": "2002-06-19",
-      "createdAt": "2026-10-09T08:45:00Z",
-      "updatedAt": "2026-10-09T08:45:00Z"
+      id: 9,
+      name: "Aditya Kumar",
+      phone: "+91-9000000009",
+      email: "aditya.kumar@example.com",
+      dob: "2005-04-22",
+      createdAt: "2026-10-09T12:40:00Z",
+      updatedAt: "2026-10-09T12:40:00Z",
     },
     {
-      "id": 10,
-      "name": "Simran Kaur",
-      "phone": "9000000010",
-      "email": "simran@example.com",
-      "dob": "2003-04-23",
-      "createdAt": "2026-10-10T10:00:00Z",
-      "updatedAt": "2026-10-10T10:00:00Z"
+      id: 10,
+      name: "Isha Malhotra",
+      phone: "+91-9000000010",
+      email: "isha.malhotra@example.com",
+      dob: "2004-08-11",
+      createdAt: "2026-10-10T09:25:00Z",
+      updatedAt: "2026-10-12T11:50:00Z",
     },
     {
-      "id": 11,
-      "name": "Vikas Jain",
-      "phone": "9000000011",
-      "email": "vikas@example.com",
-      "dob": "2001-10-05",
-      "createdAt": "2026-10-11T13:00:00Z",
-      "updatedAt": "2026-10-14T14:30:00Z"
+      id: 11,
+      name: "Vikram Yadav",
+      phone: "+91-9000000011",
+      email: "vikram.yadav@example.com",
+      dob: "2003-03-26",
+      createdAt: "2026-10-11T14:15:00Z",
+      updatedAt: "2026-10-11T14:15:00Z",
     },
     {
-      "id": 12,
-      "name": "Sneha Rathore",
-      "phone": "9000000012",
-      "email": "sneha@example.com",
-      "dob": "2002-02-28",
-      "createdAt": "2026-10-12T09:30:00Z",
-      "updatedAt": "2026-10-15T10:00:00Z"
-    }
+      id: 12,
+      name: "Meera Shah",
+      phone: "+91-9000000012",
+      email: "meera.shah@example.com",
+      dob: "2005-10-09",
+      createdAt: "2026-10-12T07:45:00Z",
+      updatedAt: "2026-10-14T10:30:00Z",
+    },
   ]);
-   return (
+
+  return (
     <div>
+      <AddStudent totalStudents={students.length} />
       <table border="1">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Name</th>
-            <th>Phone</th>
             <th>Email</th>
-            <th>Dob</th>
-            <th>CreateAt</th>
-            <th>UpdateAt</th>
+            <th>Phone</th>
+            <th>DOB</th>
           </tr>
         </thead>
         <tbody>
-          {
-            studnets.map((sRow) => (
-              <tr>
-                <td>{sRow.id}</td>
-                <td>{sRow.name}</td>
-                <td>{sRow.phone}</td>
-                <td>{sRow.email}</td>
-                <td>{sRow.dob}</td>
-                <td>{sRow.createdAt}</td>
-                <td>{sRow.updatedAt}</td>
-              </tr>))
-          }
+          {students.map((sRow) => (
+            <tr>
+              <td>{sRow.id}</td>
+              <td>{sRow.name}</td>
+              <td>{sRow.email}</td>
+              <td>{sRow.phone}</td>
+              <td>{sRow.dob}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
-
-
   );
-}
+};
 
-  export default Studentscreen;
+export default StudentScreen;

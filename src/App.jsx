@@ -1,4 +1,5 @@
 import React from 'react'
+import "./App.css"
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Applayout from './layout/Applayout'
 import Dashboardscreen from './screen/Dashboardscreen'
