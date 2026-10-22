@@ -1,26 +1,26 @@
-import React from 'react'
-import "./App.css"
-import { BrowserRouter, Route, Routes } from 'react-router'
-import Applayout from './layout/Applayout'
-import Dashboardscreen from './screen/Dashboardscreen'
-import Studentscreen from './screen/Studentscreen'
-import Teacherscreen from './screen/Teacherscreen'
-import Staffscreen from './screen/Staffscreen'
+import React from "react";
 
-function App(){
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Applayout from "./layout/Applayout";
+import DashboardScreen from "./screen/Dashboardscreen";
+import StudentScreen from "./screen/StudentScreen";
+import PageNotFound from "./screen/PageNotFound";
+import RegisterScreen from "./screen/Registerscreen";
+
+function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/register" element={<RegisterScreen />} />
         <Route path="/" element={<Applayout />}>
-          <Route index element={<Dashboardscreen />} />
-            <Route path='Student' element={<Studentscreen />} />
-            <Route path='teacher' element={<Teacherscreen/>} />
-            <Route path='Staff' element={<Staffscreen />} />
-          </Route>
+          <Route index element={<DashboardScreen />} />
+          <Route path="student" element={<StudentScreen />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
-
-  )
+  );
 }
 
-export default App
+export default App;
