@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 
-function LoginScreen() {
+function Loginscreen() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +23,9 @@ function LoginScreen() {
     const res = await response.json();
 
     console.log("Register response: ", res);
+
+    localStorage.setItem("@token", res.token)
+    location.reload()
   };
 
   return (
@@ -75,4 +78,4 @@ const styles = {
   },
 };
 
-export default LoginScreen;
+export default Loginscreen;

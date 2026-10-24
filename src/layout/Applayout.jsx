@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
-import LoginScreen from "../screen/Loginscreen";
+import Loginscreen from "../screen/Loginscreen";
 
-function Applayout() {
+function AppLayout() {
   const [isAppReady, updateAppStatus] = React.useState(false);
   const token = localStorage.getItem("@token");
 
@@ -15,7 +15,13 @@ function Applayout() {
   }
 
   if (!token) {
-    return <LoginScreen />;
+    return <Loginscreen />;
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("@token")
+
+    location.reload()
   }
 
   return (
@@ -31,6 +37,9 @@ function Applayout() {
           </li>
           <li>Teacher</li>
           <li>Staff</li>
+          <li>
+            <button type="button" onClick={handleLogout}>Logout</button>
+          </li>
         </ul>
       </nav>
       <main>
@@ -41,4 +50,4 @@ function Applayout() {
   );
 }
 
-export default Applayout;
+export default AppLayout;
